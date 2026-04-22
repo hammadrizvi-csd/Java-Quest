@@ -61,3 +61,21 @@
 - **Syntax:** `int[][] matrix = new int[rows][cols];`
 - **Memory:** Java me 2D arrays directly matrix ki tarah store nahi hote, balki arrays of arrays ke form me store hote hain.
 
+## 10. Strings in Java (Immutable)
+- **Definition:** Strings non-primitive data types hain jo text ya characters ka sequence store karte hain.
+- **Immutability:** Java me Strings immutable hoti hain, yani change nahi ho sakti. Agar aap ek string me extra text add karte ho, toh purani string change nahi hoti, balki heap me ek nayi string ban jati hai. Baar-baar aisa karne se code slow ho sakta hai.
+- **Important Methods:**
+  - `str.length()` : String ki length deta hai. Array me `length` hota hai, String me method hota hai.
+  - `str.charAt(index)` : Given index par character deta hai. Index `0` se start hota hai.
+  - `str.substring(startIndex, endIndex)` : String ka part nikalta hai. `endIndex` exclusive hota hai.
+  - Compare karne ke liye `==` use nahi karna chahiye, kyunki wo memory reference check karta hai. Hamesha `str1.compareTo(str2)` ya `str1.equals(str2)` use karo.
+
+## 11. StringBuilder (Mutable & Fast)
+- **Why StringBuilder?** Kyunki normal Strings immutable hain. Jab hume baar-baar string modify karni ho, jaise add ya delete, toh StringBuilder use karte hain. Yeh same memory location ke around changes karta hai, jisse time bachta hai.
+- **Important Methods:**
+  - `sb.append("a")` : End me jodna.
+  - `sb.insert(index, "char")` : Kahin beech me jodna.
+  - `sb.setCharAt(index, 'c')` : Character change karna.
+  - `sb.delete(startIndex, endIndex)` : String ka part delete karna.
+- **Reverse Logic:** String ko reverse karne ke liye naya array banane ki zarurat nahi hoti. Aadhe loop `n/2` tak jao aur front aur back ke characters ko swap kar do. Time complexity `O(N)` hoti hai.
+
